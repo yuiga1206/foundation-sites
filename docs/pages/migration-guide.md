@@ -82,12 +82,14 @@ What’s new that you might want to use:
 
 What’s not in F6 that was in F5:
 
-- Pricing Tables (will be available in [Building Blocks]())
+- Pricing Tables (available in [Building Blocks]())
 - Joyride (version 3 to be added soon!)
 
 ## Visual Updates
 
+Visual styles were updated in Foundation 6 to allow for easier CSS overides and a cleaner, more modern look.
 
+Check out the [Visual Migration Page](migration-visual.html) to compare versions visually.
 
 ## Gulp and Bower
 
@@ -118,7 +120,162 @@ CLI Dependencies
 
 ## Global
 
+#### Colors
 
+Some color variables have changed slightly, and colors have been refreshed in Foundation 6.
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$primary-color: #008CBA;</td>
+      <td>$primary: #2199e8;</td>
+    </tr>
+    <tr>
+      <td>$secondary-color: #e7e7e7;</td>
+      <td>$secondary: #777;</td>
+    </tr>
+    <tr>
+      <td>$success-color: #43AC6A;</td>
+      <td>$success: #3adb76;</td>
+    </tr>
+    <tr>
+      <td>$warning-color: #f08a24;</td>
+      <td>$warning: #ffae00;</td>
+    </tr>
+    <tr>
+      <td>$alert-color: #f04124;</td>
+      <td>$alert: #ec5840;</td>
+    </tr>
+    <tr>
+      <td>$white: #FFFFFF;</td>
+      <td>$white: #fefefe;</td>
+    </tr>
+    <tr>
+      <td>$black: #000000;</td>
+      <td>$black: #0a0a0a;</td>
+    </tr>
+    <tr>
+      <td>$vapor: #F6F6F6;</td>
+      <td>$light-gray: #e6e6e6;</td>
+    </tr>
+    <tr>
+      <td>$vapor: #F6F6F6;</td>
+      <td>$light-gray: #e6e6e6;</td>
+    </tr>
+    <tr>
+      <td>$aluminum: #999999;</td>
+      <td>$light-gray: #e6e6e6;</td>
+    </tr>
+    <tr>
+      <td>$monsoon: #777777;</td>
+      <td>$dark-gray: #8a8a8a;</td>
+    </tr>
+  </tbody>
+</table>
+
+The following colors from Foundation 5 were not added to Foundation 6 to simplify the color palletes and reduce complexity.
+
+```scss
+$info-color: #a0d3e8;
+$ghost: #FAFAFA;
+$snow: #F9F9F9;
+$white-smoke: #F5F5F5;
+$silver: #EFEFEF;
+$smoke: #EEEEEE;
+$gainsboro: #DDDDDD;
+$iron: #CCCCCC;
+$base: #AAAAAA;
+$jumbo: #888888;
+$steel: #666666;
+$charcoal: #555555;
+$tuatara: #444444;
+$oil: #333333;
+$jet: #222222;
+```
+
+#### Media Queries
+
+Foundation for Sites has three core breakpoints:
+
+- **Small:** any screen.
+- **Medium:** any screen 640 pixels or wider.
+- **Large:** any screen 1024 pixels or wider.
+
+If you're using the CSS version of Foundation, the breakpoints have changed slightly:
+
+Foundation 5
+
+```css
+// Small screens
+@media only screen { } /* Define mobile styles */
+
+@media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+// Medium screens
+@media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+// XLarge screens
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
+```
+
+Foundation 6
+
+```css
+/* Small only */
+@media screen and (max-width: 39.9375em) {}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+```
+
+##### Upgrading from Foundation 5 with Sass
+
+In Foundation 5, breakpoints were accessed using a series of Sass variables named `$small-up`, `$small-only`, `$medium-only`, and so on. In Foundation 6, this method of writing media queries has been replaced with a dedicated [breakpoint mixin](#the-breakpoint-mixin), described below. **The legacy variables will be removed in Foundation 6.3.**
+
+To upgrade your existing media queries, replace rulesets like this:
+
+```scss
+@media #{$medium-only} {
+}
+```
+
+With this:
+
+```scss
+@include breakpoint(medium only) {
+}
+```
+
+More on [changing breakpoints in Foundation 6 &#10142;](http://foundation.zurb.com/sites/docs/media-queries.html#changing-the-breakpoints)
+
+---
 
 ## Components
 
@@ -126,7 +283,7 @@ We'll call out any HTML, Sass, and JS differences between the versions here. Eac
 
 #### HTML Markup
 
-Any markup changes between versions will be listed for each component in the Component -> HTML sections below. Foundation 6 will have more accessibility markup and some of the classes have changes to create more consistent naming.
+Any markup changes between versions will be listed for each component in the Component &#10142; HTML sections below. Foundation 6 will have more accessibility markup and some of the classes have changes to create more consistent naming.
 
 #### Sass
 
@@ -140,9 +297,71 @@ We'll cover differences in setup, initialization, and settings in the JS section
 
 <div class="row">
   <div class="medium-4 columns">
-    <ul class="menu">
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
+    <ul class="menu vertical">
+      <li><a href="abide.md"></a></li>
+      <li><a href="accordion-menu.md"></a></li>
+      <li><a href="accordion.md"></a></li>
+      <li><a href="badge.md"></a></li>
+      <li><a href="breadcrumbs.md"></a></li>
+      <li><a href="button-group.md"></a></li>
+      <li><a href="button.md"></a></li>
+      <li><a href="callout.md"></a></li>
+      <li><a href="close-button.md"></a></li>
+      <li><a href="drilldown-menu.md"></a></li>
+    </ul>
+  </div>
+  <div class="medium-4 columns">
+    <ul class="menu vertical">
+      <li><a href="dropdown-menu.md"></a></li>
+      <li><a href="dropdown.md"></a></li>
+      <li><a href="equalizer.md"></a></li>
+      <li><a href="flex-grid.md"></a></li>
+      <li><a href="flex-video.md"></a></li>
+      <li><a href="float-classes.md"></a></li>
+      <li><a href="forms.md"></a></li>
+      <li><a href="grid.md"></a></li>
+      <li><a href="interchange.md"></a></li>
+      <li><a href="label.md"></a></li>
+    </ul>
+  </div>
+  <div class="medium-4 columns">
+    <ul class="menu vertical">
+      <li><a href="magellan.md"></a></li>
+      <li><a href="media-object.md"></a></li>
+      <li><a href="menu.md"></a></li>
+      <li><a href="navigation.md"></a></li>
+      <li><a href="off-canvas.md"></a></li>
+      <li><a href="orbit.md"></a></li>
+      <li><a href="pagination.md"></a></li>
+      <li><a href="progress-bar.md"></a></li>
+      <li><a href="responsive-navigation.md"></a></li>
+      <li><a href="reveal.md"></a></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="medium-4 columns">
+    <ul class="menu vertical">
+      <li><a href="rtl.md"></a></li>
+      <li><a href="slider.md"></a></li>
+      <li><a href="switch.md"></a></li>
+      <li><a href="table.md"></a></li>
+      <li><a href="tabs.md"></a></li>
+      <li><a href="thumbnail.md"></a></li>
+      <li><a href="tooltip.md"></a></li>
+      <li><a href="top-bar.md"></a></li>
+      <li><a href="typography-helpers.md"></a></li>
+      <li><a href="visibility.md"></a></li>
+    </ul>
+  </div>
+  <div class="medium-4 columns">
+    <ul class="menu vertical">
+      
+    </ul>
+  </div>
+  <div class="medium-4 columns">
+    <ul class="menu vertical">
+      
     </ul>
   </div>
 </div>

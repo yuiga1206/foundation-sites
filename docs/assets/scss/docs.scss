@@ -25,3 +25,31 @@
 @import 'examples/orbit';
 @import 'examples/reveal';
 @import 'examples/top-bar';
+
+.f5 {
+  &.docs-color-block-primary {
+    background: #008CBA;
+  }
+  &.docs-color-block-secondary {
+    background: #e7e7e7;
+  }
+  &.docs-color-block-success {
+    background: #43AC6A;
+  }
+  &.docs-color-block-warning {
+    background: #f08a24;
+  }
+  &.docs-color-block-alert {
+    background: #f04124;
+  }
+  &.docs-color-block-info {
+    background: #a0d3e8;
+  }
+  &.docs-color-block-white {
+    background: #FFFFFF;
+  }
+  &.docs-color-block-black {
+    background: #000000;
+  }
+}
+
