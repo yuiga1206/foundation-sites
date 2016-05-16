@@ -135,7 +135,11 @@ class Reveal {
 
     this.$element.on({
       'open.zf.trigger': this.open.bind(this),
-      'close.zf.trigger': this.close.bind(this),
+      'close.zf.trigger': (event, $element) => {
+        if ($(event.target).parents('[data-closable]')[0] === $element) { // only close reveal when it's explicitly called
+          return this.close.apply(this);
+        }
+      },
       'toggle.zf.trigger': this.toggle.bind(this),
       'resizeme.zf.trigger': function() {
         _this._updatePosition();
@@ -209,6 +213,11 @@ class Reveal {
 
     if(this.$overlay) {
       this.$overlay.css({'visibility': ''}).hide();
+      if(this.$element.hasClass('fast')) {
+        this.$overlay.addClass('fast');
+      } else if (this.$element.hasClass('slow')) {
+        this.$overlay.addClass('slow');
+      }
     }
 
 
