@@ -1035,155 +1035,120 @@ Accessibility standards are the main changes with buttons in Foundation 6. The `
 
 ---
 
-### Callout
+### Panels
+
+Panels are now called Callouts. The work much the same way.
+
+Foundation 5 
+
+```html
+<div class="panel">
+  <h5>This is a regular panel.</h5>
+  <p>It has an easy to override visual style, and is appropriately subdued.</p>
+</div>
+```
+
+Foundation 6
 
 ```html
 <div class="callout">
   <h5>This is a callout.</h5>
   <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  <a href="#">It's dangerous to go alone, take this.</a>
-</div>
-
-<div class="callout secondary">
-  <h5>This is a secondary callout</h5>
-  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  <a href="#">It's dangerous to go alone, take this.</a>
-</div>
-
-<div class="callout success">
-  <h5>This is a success callout</h5>
-  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  <a href="#">It's dangerous to go alone, take this.</a>
-</div>
-
-<div class="callout warning">
-  <h5>This is a warning callout</h5>
-  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  <a href="#">It's dangerous to go alone, take this.</a>
-</div>
-
-<div class="callout alert">
-  <h5>This is an alert callout</h5>
-  <p>It has an easy to override visual style, and is appropriately subdued.</p>
-  <a href="#">It's dangerous to go alone, take this.</a>
 </div>
 ```
 
+#### HTML Markup
+
+Other than the class, no other structural changes have been made.
+
+#### Sass
+
+**Updated Classes**
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.panel</td>
+      <td>.callout</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.secondary</td>
+    </tr>
+    <tr>
+      <td>.callout</td>
+      <td>.primary</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.success</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.warning</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.alert</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.small</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.large</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>`deprecated`</td>
+    </tr>
+  </tbody>
+</table>
+
+The Callout has a transparent background. Using the `.secondary` coloring class will match the default styling of the F5 Panel.
+
+**Using the mixin**
+
+```scss
+.panel {
+  @include callout($color);  
+}
+
+
+
+#### JS
+
+**The Callout requires no JS.**
+
 ---
 
-### Close Button
+<a id="dropdown"></a>
+### Dropdown
+
+Dropdown is called a Dropdown Pane in F6, not to be confused with Dropdown Menu which is more specific to navigation.
+
+Foundation 5
 
 ```html
-<div class="callout">
-  <button class="close-button" aria-label="Close alert" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <p>This is a static close button example.</p>
+<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a>
+<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
+  <!-- Just some junk that needs to be said. Or not. Your choice. -->
 </div>
 ```
 
----
-
-### Drilldown Menu
-
-```html
-<ul class="vertical menu" data-drilldown style="width: 200px" id="m1">
-  <li>
-    <a href="#">Item 1</a>
-    <ul class="vertical menu" id="m2">
-      <li>
-        <a href="#">Item 1A</a>
-        <ul class="vertical menu" id="m3">
-          <li><a href="#">Item 1Aa</a></li>
-          <li><a href="#">Item 1Ba</a></li>
-          <li><a href="#">Item 1Ca</a></li>
-          <li><a href="#">Item 1Da</a></li>
-          <li><a href="#">Item 1Ea</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Item 1B</a></li>
-      <li><a href="#">Item 1C</a></li>
-      <li><a href="#">Item 1D</a></li>
-      <li><a href="#">Item 1E</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Item 2</a>
-    <ul class="vertical menu">
-      <li><a href="#">Item 2A</a></li>
-      <li><a href="#">Item 2B</a></li>
-      <li><a href="#">Item 2C</a></li>
-      <li><a href="#">Item 2D</a></li>
-      <li><a href="#">Item 2E</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Item 3</a>
-    <ul class="vertical menu">
-      <li><a href="#">Item 3A</a></li>
-      <li><a href="#">Item 3B</a></li>
-      <li><a href="#">Item 3C</a></li>
-      <li><a href="#">Item 3D</a></li>
-      <li><a href="#">Item 3E</a></li>
-    </ul>
-  </li>
-  <li><a href='#'> Item 4</a></li>
-</ul>
-```
-
----
-
-### Dropdown Menu
-
-```html
-<ul class="dropdown menu" data-dropdown-menu>
-  <li>
-    <a>Item 1</a>
-    <ul class="menu">
-      <li><a href="#">Item 1A Loooong</a></li>
-      <li>
-        <a href='#'> Item 1 sub</a>
-        <ul class='menu'>
-          <li><a href='#'>Item 1 subA</a></li>
-          <li><a href='#'>Item 1 subB</a></li>
-          <li>
-            <a href='#'> Item 1 sub</a>
-            <ul class='menu'>
-              <li><a href='#'>Item 1 subA</a></li>
-              <li><a href='#'>Item 1 subB</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href='#'> Item 1 sub</a>
-            <ul class='menu'>
-              <li><a href='#'>Item 1 subA</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#">Item 1B</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Item 2</a>
-    <ul class="menu">
-      <li><a href="#">Item 2A</a></li>
-      <li><a href="#">Item 2B</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Item 3</a></li>
-  <li><a href='#'>Item 4</a></li>
-</ul>
-```
-
----
-
-### Dropdown Pane
+Foundation 6
 
 ```html
 <button class="button" type="button" data-toggle="example-dropdown">Toggle Dropdown</button>
-<div class="dropdown-pane" id="example-dropdown" data-dropdown>
-  Just some junk that needs to be said. Or not. Your choice.
+<div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+  <!-- Just some junk that needs to be said. Or not. Your choice. -->
 </div>
 ```
 
