@@ -39,6 +39,7 @@ When migrating, the following items can be translated easily from 5 to 6:
 - Thumbnail
 - Equalizer
 - Interchange
+- Keystrokes
 - Pagination
 - Breadcrumbs
 
@@ -288,6 +289,70 @@ More on [changing breakpoints in Foundation 6 &#10142;](http://foundation.zurb.c
 
 ---
 
+## Component Map
+
+<div class="row" data-magellan>
+  <div class="medium-3 columns">
+    <ul class="menu vertical">
+      <li><a href="#abide">Abide</a></li>
+      <li><a href="#accordion">Accordion</a></li>
+      <li><a href="#alerts">Alerts</a></li>
+      <li><a href="#block-grid">Block Grid</a></li>
+      <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+      <li><a href="#button-group">Button Group</a></li>
+      <li><a href="#button">Button</a></li>
+      <!-- <li><a href="#clearing">Clearing</a></li> -->
+      <li><a href="#dropdown">Dropdown</a></li>
+      <li><a href="#dropdown-buttons">Dropdown Buttons</a></li>
+      <li><a href="#equalizer">Equalizer</a></li>
+    </ul>
+  </div>
+  <div class="medium-3 columns">
+    <ul class="menu vertical">
+      <li><a href="#flex-video">Flex Video</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#grid">Grid</a></li>
+      <li><a href="icon-bar">Icon Bar</a></li>
+      <li><a href="inline-list">Inline List</a></li>
+      <li><a href="#interchange">Interchange</a></li>
+      <!-- <li><a href="#joyride">Joyride</a></li> -->
+      <li><a href="#label">Label and Badges</a></li>
+      <li><a href="#magellan">Magellan Sticky Nav</a></li>
+      <li><a href="#off-canvas">Off Canvas</a></li>
+      <li><a href="#orbit">Orbit</a></li>
+    </ul>
+  </div>
+  <div class="medium-3 columns">
+    <ul class="menu vertical">
+      <li><a href="#pagination">Pagination</a></li>
+      <li><a href="#panel">Panel</a></li>
+      <li><a href="#progress-bar">Progress Bar</a></li>
+      <li><a href="#pricing-tables">Pricing Tables</a></li>
+      <li><a href="#rtl">RTL</a></li>
+      <li><a href="#slider">Range Slider</a></li>
+      <li><a href="#side-nav">Side Nav</a></li>
+      <li><a href="#split-buttons">Split Buttons</a></li>
+      <li><a href="#sub-nav">Sub Nav</a></li>
+      <li><a href="#switch">Switch</a></li>
+    </ul>
+  </div>
+  <div class="medium-3 columns">
+    <ul class="menu vertical">
+      <li><a href="#table">Table</a></li>
+      <li><a href="#tabs">Tabs</a></li>
+      <li><a href="#thumbnail">Thumbnail</a></li>
+      <li><a href="#tooltip">Tooltip</a></li>
+      <li><a href="#topbar">Top Bar</a></li>
+      <li><a href="#reveal">Reveal Modal</a></li>
+      <li><a href="#typography-helpers">Typography</a></li>
+      <li><a href="#utility-classes">Utility Classes</a></li>
+      <li><a href="#visibility">Visibility</a></li>
+    </ul>
+  </div>
+</div>
+
+---
+
 ## Components
 
 We'll call out any HTML, Sass, and JS differences between the versions here. Each component will have a HTML, Sass, and JS section to describe specific changes. 
@@ -304,79 +369,9 @@ Class names, styling differences, mixins, and variables will be discussed in the
 
 We'll cover differences in setup, initialization, and settings in the JS section of each component.
 
-#### Component Map
+---
 
-<div class="row">
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      <li><a href="abide.md"></a></li>
-      <li><a href="accordion-menu.md"></a></li>
-      <li><a href="accordion.md"></a></li>
-      <li><a href="badge.md"></a></li>
-      <li><a href="breadcrumbs.md"></a></li>
-      <li><a href="button-group.md"></a></li>
-      <li><a href="button.md"></a></li>
-      <li><a href="callout.md"></a></li>
-      <li><a href="close-button.md"></a></li>
-      <li><a href="drilldown-menu.md"></a></li>
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      <li><a href="dropdown-menu.md"></a></li>
-      <li><a href="dropdown.md"></a></li>
-      <li><a href="equalizer.md"></a></li>
-      <li><a href="flex-grid.md"></a></li>
-      <li><a href="flex-video.md"></a></li>
-      <li><a href="float-classes.md"></a></li>
-      <li><a href="forms.md"></a></li>
-      <li><a href="grid.md"></a></li>
-      <li><a href="interchange.md"></a></li>
-      <li><a href="label.md"></a></li>
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      <li><a href="magellan.md"></a></li>
-      <li><a href="media-object.md"></a></li>
-      <li><a href="menu.md"></a></li>
-      <li><a href="navigation.md"></a></li>
-      <li><a href="off-canvas.md"></a></li>
-      <li><a href="orbit.md"></a></li>
-      <li><a href="pagination.md"></a></li>
-      <li><a href="progress-bar.md"></a></li>
-      <li><a href="responsive-navigation.md"></a></li>
-      <li><a href="reveal.md"></a></li>
-    </ul>
-  </div>
-</div>
-<div class="row">
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      <li><a href="rtl.md"></a></li>
-      <li><a href="slider.md"></a></li>
-      <li><a href="switch.md"></a></li>
-      <li><a href="table.md"></a></li>
-      <li><a href="tabs.md"></a></li>
-      <li><a href="thumbnail.md"></a></li>
-      <li><a href="tooltip.md"></a></li>
-      <li><a href="top-bar.md"></a></li>
-      <li><a href="typography-helpers.md"></a></li>
-      <li><a href="visibility.md"></a></li>
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="menu vertical">
-      
-    </ul>
-  </div>
-</div>
-
+<a id="abide"></a>
 ### Abide
 
 To enable validation with Abide, add the `data-abide` attribute to your form element. Then add the `required` attribute to each input that you want to require. Additionally, you can define a pattern to define restraints on what users can input.
@@ -514,6 +509,7 @@ Foundation 6
 
 ---
 
+<a id="accordion"></a>
 ### Accordion
 
 Foundation 5
@@ -624,35 +620,36 @@ Foundation 6
 
 ---
 
-### Labels & Badge
+<a id="alerts"></a>
+### Alerts
 
-Labels in Foundation 5 had modifyer classes to make them round. In Foundation 6, lables and badges are separate components.
+In Foundation 6, Alerts can be created using two existing componets together. Using the Callout along with the Close Button creates an alert box style.
 
 Foundation 5
 
 ```html
-<span class="label">Label</span>
-<span class="success label">Label</span>
-<span class="round">Label</span>
+<div data-alert class="alert-box">
+  <!-- Your content goes here -->
+  <a href="#" class="close">&times;</a>
+</div>
 ```
 
-Foundation 6 Label
+Foundation 6
 
 ```html
-<span class="secondary label">Label</span>
-```
-
-Foundation 6 Badge
-
-```html
-<span class="secondary badge">2</span>
+<div class="alert callout" data-closable>
+  <!-- Your content goes here -->
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 ```
 
 #### HTML Markup
 
-To create a radius label, you can use CSS `border-radius: $global-radius;`.
-
 #### Sass
+
+**Updated Classes**
 
 <table>
   <thead>
@@ -663,43 +660,146 @@ To create a radius label, you can use CSS `border-radius: $global-radius;`.
   </thead>
   <tbody>
     <tr>
-      <td>.secondary</td>
-      <td>.secondary</td>
+      <td>.alert-box</td>
+      <td>.callout</td>
     </tr>
     <tr>
-      <td>.success</td>
-      <td>.success</td>
-    </tr>
-    <tr>
-      <td>.alert</td>
-      <td>.alert</td>
-    </tr>
-    <tr>
-      <td>.warning</td>
-      <td>.warning</td>
-    </tr>
-    <tr>
-      <td>.info</td>
-      <td>.info</td>
-    </tr>
-    <tr>
-      <td>.radius</td>
-      <td>deprecated</td>
-    </tr>
-    <tr>
-      <td>.round</td>
-      <td>badge is round</td>
+      <td>.close</td>
+      <td>.close-button</td>
     </tr>
   </tbody>
 </table>
 
+**Using the mixin**
+
+```scss
+.alert-box {
+  @include callout-base;
+  @include callout-style($color);
+  @include close-button;
+}
+```
 
 #### JS
 
-**Labels and badges requires no JS.**
+**The Callout requires no JS.**
+
+**The Close Button requires no JS.**
+
+The Close Button uses the data-closable JS utility to close the notification.
 
 ---
 
+<a id="block-grid"></a>
+### Block Grid
+
+In Foundation 5, the Glock Grid was a separate component. In Foundation 6, Block Grid is integrated into the Grid and allows for parent level sizing. This simplifies markup and creates more consistent spacing.
+
+Foundation 5
+
+```html
+<div class="row">
+  <div class="small-12 columns">
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
+    </ul>
+  </div>
+</div>
+
+```
+
+Foundation 6
+
+```html
+<div class="row small-up-1 medium-up-2 large-up-4">
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+  <div class="column">
+    <img src="//placehold.it/300x300" class="thumbnail" alt="">
+  </div>
+</div>
+```
+
+#### HTML Markup
+
+In F6, each block of the Block Grid is a `.column`. To convert from F5's Block Grid you will delete the `<ul>` and `<li>`'s and move your content into the `.columns`. In the `.row` you will define your parent level sizing.
+
+#### Sass
+
+**Updated Classes**
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>small-block-grid-1</td>
+      <td>small-up-1</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-2</td>
+      <td>small-up-2</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-3</td>
+      <td>small-up-3</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-4</td>
+      <td>small-up-4</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-5</td>
+      <td>small-up-5</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-6</td>
+      <td>small-up-6</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-7</td>
+      <td>small-up-7</td>
+    </tr>
+    <tr>
+      <td>small-block-grid-8</td>
+      <td>small-up-8</td>
+    </tr>
+  </tbody>
+</table>
+
+**Using the mixin**
+
+
+
+#### JS
+
+**The Block Grid requires no JS.**
+
+---
+
+<a id="breadcrumbs"></a>
 ### Breadcrumbs
 
 ```html
@@ -748,7 +848,109 @@ The main differences are the added accessibility attributes. `aria-label` will b
 
 ---
 
+<a id="button-group"></a>
+### Button Groups
+
+```html
+<ul class="button-group">
+  <li><a href="#" class="button">Button 1</a></li>
+  <li><a href="#" class="button">Button 2</a></li>
+  <li><a href="#" class="button">Button 3</a></li>
+</ul>
+```
+
+Foundation 6
+
+```html
+<div class="button-group">
+  <a class="button">One</a>
+  <a class="button">Two</a>
+  <a class="button">Three</a>
+</div>
+```
+
+#### HTML Markup
+
+In Foundation 6, you no longer need to use an `<ul>` and `<li>` structure. The markup in F6 is simpler and less specific. 
+
+To create evenly sized buttons, you can use the `.expanded` class rather than `.even-#` eliminating the need to specify the number of buttons.
+
+Color classes now can applied to the parent element (.button-group) to affect the color of all the children or individually as needed.
+
+#### Sass
+
+**Updated Classes**
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.button-group</td>
+      <td>.button-group</td>
+    </tr>
+    <tr>
+      <td>.button-group</td>
+      <td>.disabled</td>
+    </tr>
+    <tr>
+      <td>.even-#</td>
+      <td>.expanded</td>
+    </tr>
+    <tr>
+      <td>.stack</td>
+      <td>.stacked</td>
+    </tr>
+    <tr>
+      <td>.stack-for-small</td>
+      <td>.stacked-for-small, .stacked-for-medium</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>`deprecated`</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>`deprecated`</td>
+    </tr>
+  </tbody>
+</table>
+
+<a target="_blank" href="http://codepen.io/rafibomb/pen/yOmjGp">Add a border-radius to the Button Group</a>
+
+**Using the mixin**
+
+
+
+#### JS
+
+**The Button Group requires no JS.**
+
+---
+
+<a id="button"></a>
 ### Button
+
+Foundation 5
+
+```html
+<!-- Size Classes -->
+<a href="#" class="button tiny">Tiny Button</a>
+<a href="#" class="button small">Small Button</a>
+<a href="#" class="button">Default Button</a>
+<a href="#" class="button disabled">Disabled Button</a>
+<a href="#" class="button large">Large Button</a>
+<a href="#" class="button expand">Expanded Button</a>
+<!-- Radius Classes -->
+<a href="#" class="button round">Round Button</a>
+<a href="#" class="button radius">Radius Button</a>
+```
+
+Foundation 6
 
 ```html
 <!-- Anchors (links) -->
@@ -763,13 +965,73 @@ The main differences are the added accessibility attributes. `aria-label` will b
 <a class="small button" href="#">So Small</a>
 <a class="large button" href="#">So Large</a>
 <a class="expanded button" href="#">Such Expand</a>
-
-<div class="button-group">
-  <a class="button">One</a>
-  <a class="button">Two</a>
-  <a class="button">Three</a>
-</div>
 ```
+
+#### HTML Markup
+
+Accessibility standards are the main changes with buttons in Foundation 6. The `<button>` tag is no longer styled like a button. This allows the `<button>` to be used as intended without having to overide it's appearance.
+
+#### Sass
+
+**Updated Classes**
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.button</td>
+      <td>.button</td>
+    </tr>
+    <tr>
+      <td>.tiny</td>
+      <td>.tiny</td>
+    </tr>
+    <tr>
+      <td>.small</td>
+      <td>.small</td>
+    </tr>
+    <tr>
+      <td>.large</td>
+      <td>.large</td>
+    </tr>
+    <tr>
+      <td>.expand</td>
+      <td>.expanded</td>
+    </tr>
+    <tr>
+      <td>.disabled</td>
+      <td>.disabled</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>.hollow</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>`deprecated`</td>
+    </tr>
+    <tr>
+      <td>.round</td>
+      <td>`deprecated`</td>
+    </tr>
+  </tbody>
+</table>
+
+<a target="_blank" href="http://codepen.io/rafibomb/pen/reXvXZ">Add a border-radius to a Button</a>
+
+**Using the mixin**
+
+
+
+#### JS
+
+**The Button Group requires no JS.**
+
 
 ---
 
@@ -1114,114 +1376,6 @@ $grid-column-gutter: (
 
 ---
 
-### Block Grid
-
-In Foundation 5, the Glock Grid was a separate component. In Foundation 6, Block Grid is integrated into the Grid and allows for parent level sizing. This simplifies markup and creates more consistent spacing.
-
-Foundation 5
-
-```html
-<div class="row">
-  <div class="small-12 columns">
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-      <li><img src="//placehold.it/300x300" class="thumbnail" alt=""></li>
-    </ul>
-  </div>
-</div>
-
-```
-
-Foundation 6
-
-```html
-<div class="row small-up-1 medium-up-2 large-up-4">
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-  <div class="column">
-    <img src="//placehold.it/300x300" class="thumbnail" alt="">
-  </div>
-</div>
-```
-
-#### HTML Markup
-
-In F6, each block of the Block Grid is a `.column`. To convert from F5's Block Grid you will delete the `<ul>` and `<li>`'s and move your content into the `.columns`. In the `.row` you will define your parent level sizing.
-
-#### Sass
-
-**Updated Classes**
-
-<table>
-  <thead>
-    <tr>
-      <th>Foundation 5</th>
-      <th>Foundation 6</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>small-block-grid-1</td>
-      <td>small-up-1</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-2</td>
-      <td>small-up-2</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-3</td>
-      <td>small-up-3</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-4</td>
-      <td>small-up-4</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-5</td>
-      <td>small-up-5</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-6</td>
-      <td>small-up-6</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-7</td>
-      <td>small-up-7</td>
-    </tr>
-    <tr>
-      <td>small-block-grid-8</td>
-      <td>small-up-8</td>
-    </tr>
-  </tbody>
-</table>
-
-**Using the mixin**
-
-
-
-#### JS
-
-**The Block Grid requires no JS.**
-
----
-
 ### Interchange
 
 ```html
@@ -1240,6 +1394,83 @@ In F6, each block of the Block Grid is a `.column`. To convert from F5's Block G
 ```
 
 ---
+
+<a id="labels"></a>
+### Labels & Badge
+
+Labels in Foundation 5 had modifyer classes to make them round. In Foundation 6, lables and badges are separate components.
+
+Foundation 5
+
+```html
+<span class="label">Label</span>
+<span class="success label">Label</span>
+<span class="round">Label</span>
+```
+
+Foundation 6 Label
+
+```html
+<span class="secondary label">Label</span>
+```
+
+Foundation 6 Badge
+
+```html
+<span class="secondary badge">2</span>
+```
+
+#### HTML Markup
+
+To create a radius label, you can use CSS `border-radius: $global-radius;`.
+
+#### Sass
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.secondary</td>
+      <td>.secondary</td>
+    </tr>
+    <tr>
+      <td>.success</td>
+      <td>.success</td>
+    </tr>
+    <tr>
+      <td>.alert</td>
+      <td>.alert</td>
+    </tr>
+    <tr>
+      <td>.warning</td>
+      <td>.warning</td>
+    </tr>
+    <tr>
+      <td>.info</td>
+      <td>.info</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>deprecated</td>
+    </tr>
+    <tr>
+      <td>.round</td>
+      <td>badge is round</td>
+    </tr>
+  </tbody>
+</table>
+
+
+#### JS
+
+**Labels and badges requires no JS.**
+
+--- 
 
 ### Magellan
 
