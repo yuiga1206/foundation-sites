@@ -11,7 +11,6 @@ This guide describes the changes required to migrate a Foundation for Sites proj
 
 First off, it’s important to ask yourself why you want to upgrade an existing Foundation 5 site to Foundation 6. Any migration will take time and effort. Whether it’s the A11Y compatibility or the super light codebase, you’ll want to make sure those benefits outweigh the time and effort to upgrade. After all, thousands of successful sites are still on older versions of Foundation, including version [4](http://www.newbalance.com/), [3](https://jquery.com/), and even [2](http://camps.winshape.org/)!
 
-
 ### Why so many changes?
 
 We're absolutely thrilled to share with you the best version of Foundation yet. It’s faster, 50% lighter, more versatile, flexible and powerful than ever before — getting your projects from Prototype to Production. With such lofty expectations, comes lot’s of changes. We went back to the drawing board, talked to many companies, and re-evaluated how a framework helps improve your workflow without getting in your way. 
@@ -19,6 +18,8 @@ We're absolutely thrilled to share with you the best version of Foundation yet. 
 A lot has changed and that means there is no simple upgrade path. If you feel like you’re willing and able to put in the work, this migration guide will help you get your existing Foundation 5 site on version 6.
 
 *Converting from 4 to 6 is similar for most components.*
+
+---
 
 ## Overview
 
@@ -85,15 +86,21 @@ What’s not in F6 that was in F5:
 - Pricing Tables (available in [Building Blocks]())
 - Joyride (version 3 to be added soon!)
 
+---
+
 ## Visual Updates
 
 Visual styles were updated in Foundation 6 to allow for easier CSS overides and a cleaner, more modern look.
 
 Check out the [Visual Migration Page](migration-visual.html) to compare versions visually.
 
+---
+
 ## Gulp and Bower
 
 Foundation 5 used the Grunt task runner and Foundation 6 uses Gulp. We'll point out any differences you need to know about the versions.
+
+---
 
 ## Dependencies
 
@@ -117,6 +124,8 @@ CLI Dependencies
 - Git
 - Node
 - Bower
+
+---
 
 ## Global
 
@@ -199,6 +208,8 @@ $oil: #333333;
 $jet: #222222;
 ```
 
+Foundation 6 now uses a color-pallette Sass map to allow you to add your own color variables and classes. [More on Foundation 6 color pallete &#10142;](global.html)
+
 #### Media Queries
 
 Foundation for Sites has three core breakpoints:
@@ -255,9 +266,9 @@ Foundation 6
 @media screen and (min-width: 64em) and (max-width: 74.9375em) {}
 ```
 
-##### Upgrading from Foundation 5 with Sass
+##### Upgrading breakpoints from Foundation 5 with Sass
 
-In Foundation 5, breakpoints were accessed using a series of Sass variables named `$small-up`, `$small-only`, `$medium-only`, and so on. In Foundation 6, this method of writing media queries has been replaced with a dedicated [breakpoint mixin](#the-breakpoint-mixin), described below. **The legacy variables will be removed in Foundation 6.3.**
+In Foundation 5, breakpoints were accessed using a series of Sass variables named `$small-up`, `$small-only`, `$medium-only`, and so on. In Foundation 6, this method of writing media queries has been replaced with a dedicated [breakpoint mixin](media-queries.html#the-breakpoint-mixin), described below. **The legacy variables will be removed in Foundation 6.3.**
 
 To upgrade your existing media queries, replace rulesets like this:
 
@@ -487,8 +498,7 @@ Foundation 6
 
 #### Sass
 
-Classes Table
-
+**Abide borrows styles from Forms. See forms for style updates.**
 
 #### JS
 
@@ -502,11 +512,36 @@ Classes Table
     - data-options
     - JS options
 
-Files to load individually
-
 ---
 
 ### Accordion
+
+Foundation 5
+
+```html
+<ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#panel1a">Accordion 1</a>
+    <div id="panel1a" class="content active">
+      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel2a">Accordion 2</a>
+    <div id="panel2a" class="content">
+      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel3a">Accordion 3</a>
+    <div id="panel3a" class="content">
+      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+</ul>
+```
+
+Foundation 6
 
 ```html
 <ul class="accordion" data-accordion role="tablist">
@@ -543,7 +578,36 @@ Files to load individually
 
 #### Sass
 
-Classes Table
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.accordion</td>
+      <td>.accordion</td>
+    </tr>
+    <tr>
+      <td>.accordion-navigation</td>
+      <td>.accordion-item</td>
+    </tr>
+    <tr>
+      <td>.content</td>
+      <td>.accordion-content</td>
+    </tr>
+    <tr>
+      <td>.active</td>
+      <td>.is-active</td>
+    </tr>
+    <tr>
+      <td>`<a>` inside .accordion-navigation</td>
+      <td>.accordion-title</td>
+    </tr>
+  </tbody>
+</table>
 
 
 #### JS
@@ -558,73 +622,81 @@ Classes Table
     - data-options
     - JS options
 
-Files to load individually
-
 ---
 
-### Accordion Menu
+### Labels & Badge
+
+Labels in Foundation 5 had modifyer classes to make them round. In Foundation 6, lables and badges are separate components.
+
+Foundation 5
 
 ```html
-<ul class="vertical menu" data-accordion-menu>
-  <li>
-    <a href="#">Item 1</a>
-    <ul class="menu vertical nested is-active">
-      <li>
-        <a href="#">Item 1A</a>
-        <ul class="menu vertical nested">
-          <li><a href="#">Item 1Ai</a></li>
-          <li><a href="#">Item 1Aii</a></li>
-          <li><a href="#">Item 1Aiii</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Item 1B</a></li>
-      <li><a href="#">Item 1C</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Item 2</a>
-    <ul class="menu vertical nested">
-      <li><a href="#">Item 2A</a></li>
-      <li><a href="#">Item 2B</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Item 3</a></li>
-</ul>
+<span class="label">Label</span>
+<span class="success label">Label</span>
+<span class="round">Label</span>
+```
+
+Foundation 6 Label
+
+```html
+<span class="secondary label">Label</span>
+```
+
+Foundation 6 Badge
+
+```html
+<span class="secondary badge">2</span>
 ```
 
 #### HTML Markup
 
-
+To create a radius label, you can use CSS `border-radius: $global-radius;`.
 
 #### Sass
 
-Classes Table
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.secondary</td>
+      <td>.secondary</td>
+    </tr>
+    <tr>
+      <td>.success</td>
+      <td>.success</td>
+    </tr>
+    <tr>
+      <td>.alert</td>
+      <td>.alert</td>
+    </tr>
+    <tr>
+      <td>.warning</td>
+      <td>.warning</td>
+    </tr>
+    <tr>
+      <td>.info</td>
+      <td>.info</td>
+    </tr>
+    <tr>
+      <td>.radius</td>
+      <td>deprecated</td>
+    </tr>
+    <tr>
+      <td>.round</td>
+      <td>badge is round</td>
+    </tr>
+  </tbody>
+</table>
 
 
 #### JS
 
-- initialization
-  - reflow
-  - init after page loads
-  - AJAX (if applicable)
-  - init after event (if applicable)
-- settings
-    - data attributes
-    - data-options
-    - JS options
-
-Files to load individually
-
----
-
-### Badge
-
-```html
-<span class="secondary badge">2</span>
-<span class="success badge">3</span>
-<span class="alert badge">A</span>
-<span class="warning badge">B</span>
-```
+**Labels and badges requires no JS.**
 
 ---
 
@@ -642,6 +714,37 @@ Files to load individually
   </ul>
 </nav>
 ```
+
+#### HTML Markup
+
+The main differences are the added accessibility attributes. `aria-label` will be read out loud by the screen reader. `.show-for-sr` will hide something visually but allow a screen reader to call it out.
+
+#### Sass
+
+**Updated Classes**
+
+<table>
+  <thead>
+    <tr>
+      <th>Foundation 5</th>
+      <th>Foundation 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.breadcrumbs</td>
+      <td>.breadcrumbs</td>
+    </tr>
+    <tr>
+      <td>.unavailable</td>
+      <td>.disabled</td>
+    </tr>
+    <tr>
+      <td>.current</td>
+      <td>`<li>` without anchor</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -1109,7 +1212,7 @@ In F6, each block of the Block Grid is a `.column`. To convert from F5's Block G
   </tbody>
 </table>
 
-Using the mixin
+**Using the mixin**
 
 
 
