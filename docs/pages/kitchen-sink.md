@@ -8,51 +8,51 @@ description: Everything but.
 ```html_example
 <form data-abide novalidate>
   <div data-abide-error class="alert callout" style="display: none;">
-    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    <p><i class="fi-alert"></i> 入力にエラーがあります。</p>
   </div>
   <div class="row">
     <div class="small-12 columns">
-      <label>Number Required
+      <label>数字限定
         <input type="text" placeholder="1234" aria-describedby="exampleHelpText" required pattern="number">
         <span class="form-error">
-          Yo, you had better fill this out, it's required.
+          何か入力してください。
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Here's how you use this input field!</p>
+      <p class="help-text" id="exampleHelpText">入力フィールドの使い方はこのような形です。</p>
     </div>
     <div class="small-12 columns">
-      <label>Nothing Required!
+      <label>限定なし
         <input type="text" placeholder="Use me, or don't" aria-describedby="exampleHelpTex" data-abide-ignore>
       </label>
-      <p class="help-text" id="exampleHelpTex">This input is ignored by Abide using `data-abide-ignore`</p>
+      <p class="help-text" id="exampleHelpTex">この入力フィールドはAbideのdata-abide-ignore属性によって、限定が解除されます。</p>
     </div>
     <div class="small-12 columns">
-      <label>Password Required
+      <label>パスワード入力
         <input type="password" id="password" placeholder="yeti4preZ" aria-describedby="exampleHelpText" required >
         <span class="form-error">
-          I'm required!
+          必須項目です。
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText">Enter a password please.</p>
+      <p class="help-text" id="exampleHelpText">パスワードを入力してください。</p>
     </div>
     <div class="small-12 columns">
-      <label>Re-enter Password
+      <label>パスワードの再入力
         <input type="password" placeholder="yeti4preZ" aria-describedby="exampleHelpText2" required pattern="alpha_numeric" data-equalto="password">
         <span class="form-error">
-          Hey, passwords are supposed to match!
+          パスワードは一致するものですよ！
         </span>
       </label>
-      <p class="help-text" id="exampleHelpText2">This field is using the `data-equalto="password"` attribute, causing it to match the password field above.</p>
+      <p class="help-text" id="exampleHelpText2">このフィールドはdata-equalto="password"属性を使用して、上記のパスワードフィールドと一致させます。</p>
     </div>
   </div>
   <div class="row">
     <div class="medium-6 columns">
-      <label>URL Pattern, not required, but throws error if it doesn't match the Regular Expression for a valid URL.
+      <label>URLパターンは必須ではありませんが、有効なURLの正規表現と一致しない場合はエラーを表示します。
         <input type="text" placeholder="http://foundation.zurb.com" pattern="url">
       </label>
     </div>
     <div class="medium-6 columns">
-      <label>European Cars, Choose One, it can't be the blank option.
+      <label>ヨーロッパの車を1つを選択してください。空白にすることはできません。
         <select id="select" required>
           <option value=""></option>
           <option value="volvo">Volvo</option>
@@ -65,19 +65,19 @@ description: Everything but.
   </div>
   <div class="row">
     <fieldset class="large-6 columns">
-      <legend>Choose Your Favorite, and this is required, so you have to pick one.</legend>
+      <legend>あなたの好きなものを選んでください。必須項目です。</legend>
       <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
       <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">Blue</label>
       <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
     </fieldset>
     <fieldset class="large-6 columns">
-      <legend>Choose Your Favorite - not required, you can leave this one blank.</legend>
+      <legend>あなたのお気に入りを選択してください - 必須ではなく任意の項目です。</legend>
       <input type="radio" name="pockets" value="Red" id="pocketsRed"><label for="pocketsRed">Red</label>
       <input type="radio" name="pockets" value="Blue" id="pocketsBlue"><label for="pocketsBlue">Blue</label>
       <input type="radio" name="pockets" value="Yellow" id="pocketsYellow"><label for="pocketsYellow">Yellow</label>
     </fieldset>
     <fieldset class="large-6 columns">
-      <legend>Check these out</legend>
+      <legend>チェックしてください。</legend>
       <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
       <input id="checkbox2" type="checkbox" required><label for="checkbox2">Checkbox 2</label>
       <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
@@ -104,7 +104,7 @@ description: Everything but.
   <li class="accordion-item is-active" data-accordion-item>
     <a href="#" class="accordion-title">Accordion 1</a>
     <div class="accordion-content" data-tab-content >
-      <p>Panel 1. Lorem ipsum dolor</p>
+      <p>必ずどこかが開いた状態になります。</p>
       <a href="#">Nowhere to Go</a>
     </div>
   </li>
